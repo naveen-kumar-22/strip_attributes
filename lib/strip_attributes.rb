@@ -76,6 +76,8 @@ module StripAttributes
         value.squeeze!(" ")
       end
     end
+    
+    value = ActionController::Base.helpers.strip_tags value
 
     (value.blank? && !allow_empty) ? nil : value
   end
